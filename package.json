@@ -1,0 +1,20 @@
+{
+  "name": "city-explorer-server",
+  "version": "1.0.0",
+  "description": "server for city-explorer",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ostyantic/city-explorer-server.git"
+  },
+  "author": "Anthony Lopez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ostyantic/city-explorer-server/issues"
+  },
+  "homepage": "https://github.com/Ostyantic/city-explorer-server#readme"
+}
