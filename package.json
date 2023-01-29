@@ -16,5 +16,10 @@
   "bugs": {
     "url": "https://github.com/Ostyantic/city-explorer-server/issues"
   },
-  "homepage": "https://github.com/Ostyantic/city-explorer-server#readme"
+  "homepage": "https://github.com/Ostyantic/city-explorer-server#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2"
+  }
 }
