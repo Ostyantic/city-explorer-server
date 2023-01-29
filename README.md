@@ -5,7 +5,7 @@
 
 ## Overview
 
-city-explorer-server is a server that contains all of the data for use in the city-explorer application.
+city-explorer-server is an API server that contains all of the data for use in the city-explorer front end application.
 
 ## Getting Started
 <!-- What are the steps that a user must take in order to build this app on their own machine and get it running? -->
