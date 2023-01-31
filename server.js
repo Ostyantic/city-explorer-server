@@ -38,6 +38,12 @@ app.get('/weather', (req,res) => {
   let searchQuery = req.query.searchQuery;
 
   console.log('City:', searchQuery);
+  // let lat = req.query.lat;
+  // let lon = req.query.lon;
+
+  // console logging lat and lon
+  // console.log('Lat: ', lat);
+  // console.log('Lon: ', lon);
 
   //creating a new Forecast class
   let locationForecast = new Forecast(searchQuery);
@@ -62,7 +68,8 @@ class Forecast{
 
     let weather = weatherData.find(obj => obj.city_name === searchQuery);
     this.weatherForecast = weather.data;
-
+    // this.lat = weather.lat;
+    // this.lon = weather.lon;
     // individually assigning date and desc properties
     // this.date = weather.data.map(element => element.datetime);
     // this.desc = weather.data.map(element => element.weather.description);
