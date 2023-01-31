@@ -19,4 +19,8 @@ city-explorer-server is an API server that contains all of the data for use in t
 01-01-2001 4:59pm - Application now has a fully-functional express server, with a GET route for the location resource. -->
 
 ## Credit and Collaborations
-<!-- Give credit (and a link) to other people or resources that helped you build this application. -->
+- Araceli Garcia
+
+## WRRC
+
+![Image](./images/Screenshot%202023-01-31%20at%2012.00.16%20AM.png)
