@@ -22,6 +22,7 @@ const PORT = process.env.PORT || 3002;
 
 //alloww access to weather.json
 const weatherData = require('./data/weather.json');
+const { default: axios } = require('axios');
 
 app.get('/', (req, res) => {
   res.send('Endpoint is working');
@@ -31,13 +32,26 @@ app.get('/weatherData', (req,res) => {
   res.send(weatherData);
 });
 
-app.get('/weather', (req,res) => {
+app.get('/weather', getWeather);
+
+async function getWeather(req,res,next){
+
 
   // console logging the query parameter and defining searchQuery with the value of req(uest).query.searchQuery
   console.log(req.query);
-  let searchQuery = req.query.searchQuery;
+  let city = req.query.city;
 
-  console.log('City:', searchQuery);
+  let url = `https://api.weatherbit.io/v2.0/current?key=${process.env.WEATHER_API_KEY}&city=${city}`;
+
+  try{
+    const weatherResponse = await axios.get(url);
+    console.log(weatherResponse.data);
+    res.status(200).send(weatherResponse.data);
+  }
+  catch(error){
+    res.status(500).send('Server Error');
+  }
+  // console.log('City:', searchQuery);
   // let lat = req.query.lat;
   // let lon = req.query.lon;
 
@@ -54,8 +68,10 @@ app.get('/weather', (req,res) => {
   // console logging the date and desc variable and sending the API response to the client
   console.log(locationDateAndDesc);
   res.status(200).send(locationDateAndDesc);
+}
 
-});
+
+
 
 //creating a forecast class
 class Forecast{
@@ -83,5 +99,6 @@ class Forecast{
   }
 
 }
+
 
 app.listen(PORT, () => console.log(`listening on ${PORT}`));
