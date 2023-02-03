@@ -5,13 +5,26 @@
 
 ## Overview
 
-city-explorer-server is an API server that contains all of the data for use in the city-explorer front end application.
+city-explorer-server is an API server that makes multiple API requests to various sources and stores the data for use in the city explorer web application!
 
 ## Getting Started
-<!-- What are the steps that a user must take in order to build this app on their own machine and get it running? -->
+
+In order to begin setting up your very own server, you must:
+
+1. Get an API key from your desired API website.
+2. create a server using npm ini
 
 ## Architecture
-<!-- Provide a detailed description of the application design. What technologies (languages, libraries, etc) you're using, and any other relevant design information. -->
+
+Languages:
+
+Javascript 3
+
+Libraries:
+
+- DOTENV
+- Express
+- CORS
 
 ## Change Log
 <!-- Use this area to document the iterative changes made to your application as each feature is successfully implemented. Use time stamps. Here's an example:
@@ -19,4 +32,8 @@ city-explorer-server is an API server that contains all of the data for use in t
 01-01-2001 4:59pm - Application now has a fully-functional express server, with a GET route for the location resource. -->
 
 ## Credit and Collaborations
-<!-- Give credit (and a link) to other people or resources that helped you build this application. -->
+- Araceli Garcia
+
+## WRRC
+
+![Image](./images/Screenshot%202023-01-31%20at%2012.00.16%20AM.png)
