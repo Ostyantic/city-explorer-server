@@ -70,15 +70,12 @@ async function getMovie(req,res,next){
     const movieResponse = await axios.get(url);
     console.log(movieResponse.data);
     const formattedMovieResponse = movieResponse.data.results.map(obj => new Movie(obj));
-    res.status(200).send(formattedMovieResponse);
+    res.status(200).send(formattedMovieResponse.slice(0,5));
   }
   catch(error){
     res.status(500).send('Server Error');
   }
 }
-
-
-
 
 //creating a forecast class
 class Forecast{
