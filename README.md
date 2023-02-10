@@ -12,13 +12,14 @@ city-explorer-server is an API server that makes multiple API requests to variou
 In order to begin setting up your very own server, you must:
 
 1. Get an API key from your desired API website.
-2. create a server using npm ini
+2. Create a server using npm ini to create your server
+3. After server is created, install the following libraries listed below
 
 ## Architecture
 
 Languages:
 
-Javascript 3
+- Javascript 3
 
 Libraries:
 
@@ -28,13 +29,19 @@ Libraries:
 - CORS
 
 ## Change Log
-<!-- Use this area to document the iterative changes made to your application as each feature is successfully implemented. Use time stamps. Here's an example:
 
-01-01-2001 4:59pm - Application now has a fully-functional express server, with a GET route for the location resource. -->
+01-28-23 completed Use npm install to add the required dependencies to this project: `express`, `dotenv`, and `cors`.
+01-28-23 completed Create a basic Express server.
+01-28-23 completed Create an API endpoint of /weather that processes a GET request that contains lat, lon and searchQuery information
+02-02-23 completed Create a function to handle errors from any API call
 02-04-2023 - Refactored weather and movie data into individual module files.
+02-09-2023 - Added cache functionality for weather & movie API data
 
 ## Credit and Collaborations
+
 - Araceli Garcia
+- Brenden Moore
+- Yurii Hlukhyi
 
 ## WRRC
 

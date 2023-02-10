@@ -1,22 +1,41 @@
 'use strict';
 
+//imports axios
 const axios = require('axios');
+// imports cache file
+const cache = require('../data/cache');
 
 const getMovie = (req,res,next) => {
 
   console.log(`this it the request: ${req}`);
   let city = req.query.city;
-
   let url = `https://api.themoviedb.org/3/search/movie?api_key=${process.env.MOVIE_API_KEY}&query=${city}`;
-  console.log(`This is the url: ${url}`);
+  // console.log(`This is the url: ${url}`);
 
-  axios.get(url)
-    .then(data => {
-      const formattedMovie = data.data.results.map(movie => new Movie(movie));
-      res.status(200).send(formattedMovie.slice(0,5));
-    })
-    .catch(error => next(error));
+  const key = `City: ${city}`;
+
+  if (cache[key] && (Date.now() - cache[key].timestamp < 86400000)) {
+    console.log(`cache hit - sending cached data`);
+    res.status(200).send(cache[key].data);
+  } else {
+    console.log(`cache miss - making new request`);
+    axios.get(url)
+      .then(data => {
+        const formattedMovie = data.data.results.map(movie => new Movie(movie));
+        cache[key] = {};
+        cache[key].timestamp = Date.now();
+        cache[key].data = formattedMovie.slice(0,5);
+
+
+        res.status(200).send(formattedMovie.slice(0,5));
+      })
+      .catch(error => next(error));
+  }
 };
+
+
+
+
 
 // movie class
 
