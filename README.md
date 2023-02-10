@@ -32,9 +32,13 @@ Libraries:
 
 01-01-2001 4:59pm - Application now has a fully-functional express server, with a GET route for the location resource. -->
 02-04-2023 - Refactored weather and movie data into individual module files.
+02-09-2023 - Added cache to weather.js & movie.js
 
 ## Credit and Collaborations
+
 - Araceli Garcia
+- Brenden Moore
+- Yurii Hlukhyi
 
 ## WRRC
 
